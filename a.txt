@@ -1,0 +1,16 @@
+Level 1:
+Find similar artists from top artists and compare it with the lineup.
+
+Level 2:
+Find artists from top tracks, find similar artists and compare it with the lineup.
+
+Level 3:
+Find similar artists of similar artists of top artists.
+
+Level 4: Get user's top genres, get genres for each artist, if an artist's genre mostly matches, recommend it.
+
+level 5: Get user's top genres, calculate the genre avarage of the festival, and recommend the festival accordingly.
+
+level 6: Get recommendations for each top artist, 
+
+level 7: Get audio analysis for each line up artist, compare it with user's top tracks, recommend accordingly.
