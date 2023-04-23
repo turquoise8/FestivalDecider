@@ -5,6 +5,9 @@
 	import logo from '$lib/assets/spotify.png';
 	import Layout from '../lib/layouts/MainLayout.svelte';
 	import AppTitle from '$lib/components/AppTitle.svelte';
+	import { dev } from '$app/environment';
+	import { inject } from '@vercel/analytics';
+	inject({ mode: dev ? 'development' : 'production' });
 
 	// Svelte animations won't work on the first render. This is a workaround.
 	let ready = false;
