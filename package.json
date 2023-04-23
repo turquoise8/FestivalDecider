@@ -31,6 +31,7 @@
 	"dependencies": {
 		"@sveltejs/adapter-auto": "^1.0.0",
 		"sass": "^1.57.1",
-		"spotify-web-api-js": "^1.5.2"
+		"spotify-web-api-js": "^1.5.2",
+		"tesseract.js": "^4.0.2"
 	}
 }

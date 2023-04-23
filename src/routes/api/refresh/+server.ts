@@ -1,14 +1,13 @@
 import type { RequestHandler } from './$types';
 import { CLIENT_SECRET, CLIENT_ID } from '$env/static/private';
-import { PUBLIC_BASE_URL } from '$env/static/public';
 
 export const POST: RequestHandler = async ({ request }) => {
-	const { code, state } = await request.json();
+	const { refreshToken } = await request.json();
 
-	if (state === null) {
+	if (refreshToken === null) {
 		return new Response(
 			JSON.stringify({
-				message: 'No state provided',
+				message: 'No refresh token provided',
 				error: true
 			})
 		);
@@ -16,9 +15,8 @@ export const POST: RequestHandler = async ({ request }) => {
 		const authOptions = {
 			url: 'https://accounts.spotify.com/api/token',
 			form: {
-				code: code,
-				redirect_uri: PUBLIC_BASE_URL + '/app',
-				grant_type: 'authorization_code'
+				refresh_token: refreshToken,
+				grant_type: 'refresh_token'
 			},
 			headers: {
 				Authorization: 'Basic ' + Buffer.from(CLIENT_ID + ':' + CLIENT_SECRET).toString('base64')
